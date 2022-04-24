@@ -1,12 +1,10 @@
 import { Categoria } from "../model/categaria";
+import {
+  ICategoryRepository,
+  ICreateCategariaDTO,
+} from "./ICategoryRepository";
 
-// data transfer object
-interface ICreateCategariaDTO {
-  name: string;
-  discricao: string;
-}
-
-class CategoriasRepository {
+class CategoriasRepository implements ICategoryRepository {
   private categorias: Categoria[];
 
   constructor() {
@@ -15,7 +13,6 @@ class CategoriasRepository {
 
   create({ name, discricao }: ICreateCategariaDTO): void {
     const categaria = new Categoria();
-
     Object.assign(categaria, {
       name,
       discricao,
@@ -29,7 +26,7 @@ class CategoriasRepository {
     return this.categorias;
   }
 
-  findName(name: string):Categoria {
+  findByNAme(name: string): Categoria {
     const categaria = this.categorias.find(
       (cotegaoria) => cotegaoria.name === name
     );
