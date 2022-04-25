@@ -1,4 +1,4 @@
-import { ICategoryRepository } from "../repositories/Category/ICategoryRepository";
+import { ICategoryRepository } from "../../repositories/Category/ICategoryRepository";
 
 
 interface IRequest {
@@ -6,8 +6,7 @@ interface IRequest {
   discricao: string;
 }
 
-
-class CreateCategoryServices {
+class CreateCategoryUseCase  {
   constructor(private categoriasreposity: ICategoryRepository) {}
   
   execute({ name, discricao }: IRequest):void {
@@ -15,8 +14,10 @@ class CreateCategoryServices {
     if (categoria_is_existe) {
       throw new Error("Category Already exists !");
     }
+    
     this.categoriasreposity.create({ name, discricao });
   }
+
 }
 
-export { CreateCategoryServices };
+export { CreateCategoryUseCase };
