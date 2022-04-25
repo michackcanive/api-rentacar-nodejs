@@ -1,4 +1,5 @@
-import { Categoria } from "../model/categaria";
+import { Categoria } from "../../model/categaria";
+
 
 
 

@@ -1,14 +1,12 @@
 import { Router } from "express";
-import { CategoriasRepository } from "../repositories/CategoriasRepository";
-import { CreateCategoryServices } from "../services/CreateCategoryServices";
+import { CategoriasRepository } from "../modules/car/repositories/Category/CategoriasRepository";
+import { CreateCategoryServices } from "../modules/car/services/CreateCategoryServices";
 
 const categarisRoutes = Router();
 const categoriasreposity= new CategoriasRepository();
 
-
-
 categarisRoutes.post("/create", (req, resp) => {
-    
+
   const { name, discricao } = req.body;
   const CreateCategoryService=new CreateCategoryServices(categoriasreposity)
   CreateCategoryService.execute({name,discricao})
