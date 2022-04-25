@@ -10,5 +10,6 @@ class Categoria {
       this.id = uuidv4();
     }
   }
+  
 }
 export { Categoria };

@@ -11,5 +11,6 @@ class Specification {
       this.id = uuidv4();
     }
   }
+  
 }
 export { Specification };
