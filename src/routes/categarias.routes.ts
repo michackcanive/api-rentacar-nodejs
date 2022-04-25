@@ -5,8 +5,6 @@ import { CreateCategoryServices } from "../modules/car/services/CreateCategorySe
 const categarisRoutes = Router();
 const categoriasreposity= new CategoriasRepository();
 
-
-
 categarisRoutes.post("/create", (req, resp) => {
 
   const { name, discricao } = req.body;
