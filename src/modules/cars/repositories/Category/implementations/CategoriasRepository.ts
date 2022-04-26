@@ -19,8 +19,10 @@ class CategoriasRepository implements ICategoryRepository {
     }
     return CategoriasRepository.INTANCE;
   }
+
   create({ name, discricao }: ICreateCategariaDTO): void {
     const categaria = new Categoria();
+    
     Object.assign(categaria, {
       name,
       discricao,

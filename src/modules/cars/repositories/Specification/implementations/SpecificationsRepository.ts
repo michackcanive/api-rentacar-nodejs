@@ -5,9 +5,20 @@ import { ISpecificationDTO, ISpecificationsRepository } from "../ISpecifications
 class SpecificationsRepository implements ISpecificationsRepository{
 
     private specifications:Specification[];
+    private static INSTANCE:SpecificationsRepository;
 
     constructor (){
+
         this.specifications=[];
+    }
+
+    public static getInstane(){
+
+        if(!SpecificationsRepository.INSTANCE){
+            SpecificationsRepository.INSTANCE=new SpecificationsRepository();
+        }
+        return SpecificationsRepository.INSTANCE;
+
     }
 
     create({ name, discricao }: ISpecificationDTO): void {

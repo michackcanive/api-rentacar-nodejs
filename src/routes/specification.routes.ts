@@ -1,25 +1,18 @@
 import { Router } from "express";
 import { SpecificationsRepository } from "../modules/cars/repositories/Specification/implementations/SpecificationsRepository";
-import { CreateSpecificationServices } from "../modules/cars/services/CreateSpecificationServices";
-
+import { createCategoryController } from "../modules/cars/useCases/Category/createCategoy";
+import { createSpecificationController } from "../modules/cars/useCases/Specifications/CreateSpecification";
+import { listSpecificationController } from "../modules/cars/useCases/Specifications/ListSpecification";
 
 const specificationRoutes = Router();
-const specificationRepository=new SpecificationsRepository()
+const specificationRepository = new SpecificationsRepository();
 
 specificationRoutes.post("/create", (req, resp) => {
-    const { name, discricao } = req.body;
-    const CreateSpecificationService=new CreateSpecificationServices (specificationRepository)
-    CreateSpecificationService.execute({name,discricao})
-
-    return resp.status(201).json({
-        erro:false,
-        mensage:'Specificatio created viva 😀'
-    })
-  
+  return createSpecificationController.handle(req, resp);
 });
-specificationRoutes.get("/liste_specifications", (req, resp) => {
-    const all=  specificationRepository.liste_specifications()
-    return resp.status(200).json(all)
-   });
 
-export {specificationRoutes}
+specificationRoutes.get("/liste_specifications", (req, resp) => {
+return listSpecificationController.handle(req,resp);
+});
+
+export { specificationRoutes };
