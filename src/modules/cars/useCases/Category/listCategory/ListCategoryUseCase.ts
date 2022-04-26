@@ -1,5 +1,7 @@
-import { Categoria } from "../../model/categaria";
-import { ICategoryRepository } from "../../repositories/Category/ICategoryRepository";
+import { Categoria } from "../../../model/categaria";
+import { ICategoryRepository } from "../../../repositories/Category/ICategoryRepository";
+
+
 
 
 interface IRequest {

@@ -9,7 +9,6 @@ app.use(router)
 ///////////////////////////////////////////
 app.listen(3333, () => {
   console.log(
-    " hostname: localhost:3333 😀",
-    "\n servidor iniciado proximo nivel 🚀"
+    " hostname: localhost:3333 😀", "\n servidor iniciado proximo nivel 🚀"
   );
 });
