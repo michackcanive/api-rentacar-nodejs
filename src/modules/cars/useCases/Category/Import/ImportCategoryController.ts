@@ -9,8 +9,11 @@ class ImportCategoryController {
 
   handle(req: Request, resp: Response):Response {
     const {file} =req;
-    this.importCategoryUseCase.execute(file);
-    return resp.send()
+  const quatidadeDeCategoryImport=this.importCategoryUseCase.execute(file);
+    return resp.status(201).json({
+      erro:false,
+      mensagem:'importados com sucesso 😀🚀'
+    })
   }
  
 }
