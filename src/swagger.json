@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "RENTALX Documentation",
+        "title": "RENTACARS Documentation",
         "description": "Esta api é sobre aluguer de viaturas",
         "version": "1.0.0",
         "contact": {
