@@ -1,3 +1,4 @@
+
 {
     "type":"postgres",
     "host":"localhost",
@@ -9,5 +10,4 @@
     "cli":{
         "migrationsDir":"./src/database/migrations"
     }
-
 }

@@ -1,4 +1,4 @@
-import { Categoria } from "../../../model/categaria";
+import { Categoria } from "../../../entity/Categoria";
 import { ICategoryRepository } from "../../../repositories/Category/ICategoryRepository";
 
 
@@ -10,8 +10,8 @@ interface IRequest {
 }
 class ListCategoryUseCase  {
   constructor(private categoriasreposity: ICategoryRepository) {}
-  execute():Categoria[] {
-    return this.categoriasreposity.liste_categaria();
+ async  execute(): Promise<Categoria[]>{
+    return  await this.categoriasreposity.liste_categaria();
   }
   
 }
