@@ -2,7 +2,7 @@ import { CategoriasRepository } from "../../../repositories/Category/implementat
 import { ImportCategoryController } from "./ImportCategoryController";
 import { ImportCategoryUseCase } from "./ImportCategoryUseCase";
 
-const categoriasreposity= CategoriasRepository.getInstane()
+const categoriasreposity=null
 const importCategoryUseCase=new ImportCategoryUseCase(categoriasreposity)
 const importCategoryController=new ImportCategoryController(importCategoryUseCase)
 export {importCategoryUseCase,categoriasreposity,importCategoryController}

@@ -1,20 +1,12 @@
-import { Categoria } from "../../model/categaria";
-
-
-
-
+import { Categoria } from "../../entity/Categoria";
 // data transfer object
 interface ICreateCategariaDTO {
     name: string;
     discricao: string;
   }
-
 interface ICategoryRepository{
-findByNAme(name:string):Categoria;
-create({name,discricao}:ICreateCategariaDTO):void;
-liste_categaria():Categoria[];
-
+findByNAme(name:string): Promise<Categoria>;
+create({name,discricao}:ICreateCategariaDTO): Promise<void>;
+liste_categaria():Promise<Categoria[]>;
 }
-
-
 export {ICategoryRepository,ICreateCategariaDTO}
