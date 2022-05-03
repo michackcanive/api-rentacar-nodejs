@@ -1,16 +1,13 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "RENTACARS Documentation",
+        "title": "RENTACARS Docs",
         "description": "Esta api é sobre aluguer de viaturas",
-        "version": "1.0.0",
+        "version": "2.0.0",
         "contact": {
-            "email": "mechackantonio@gmail.com"
-            
+            "email": "mechackantonio@gmail.com"  
         }
-        
     },
-
     "paths":{
         "/categaria":{
             "post":{
@@ -79,10 +76,4 @@
            
         }
     }
-
-
-
-    
-
-
 }
