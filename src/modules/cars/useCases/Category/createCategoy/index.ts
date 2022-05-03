@@ -1,4 +1,4 @@
-import { CategoriasRepository } from "../../../repositories/Category/implementations/CategoriasRepository";
+/* import { CategoriasRepository } from "../../../repositories/Category/implementations/CategoriasRepository";
 import { CreateCategoryController } from "./CreateCategoryController";
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 
@@ -8,7 +8,6 @@ const categoriasreposity = new CategoriasRepository();
 const createCategoryUseCase = new CreateCategoryUseCase(categoriasreposity);
 const createCategoryController = new CreateCategoryController(createCategoryUseCase);
 
-  /*  {createCategoryUseCase,categoriasreposity,createCategoryController} */
 
   return createCategoryController;
-};
+}; */
