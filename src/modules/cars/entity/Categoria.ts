@@ -9,7 +9,6 @@ export class Categoria {
       this.id = uuidv4();
     }
   }
-
   @PrimaryColumn()
   id?: string;
 

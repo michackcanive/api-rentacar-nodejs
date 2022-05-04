@@ -12,5 +12,7 @@ class Specification {
     }
   }
   
+  
 }
+
 export { Specification };

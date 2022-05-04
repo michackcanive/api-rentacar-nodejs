@@ -17,12 +17,14 @@ class CategoriasRepository implements ICategoryRepository {
   }
 
   async create({ name, discricao }: ICreateCategariaDTO): Promise<void> {
+
     const categaria = this.repository.create({
       name,
       discricao,
     });
     
     await this.repository.save(categaria);
+    
   }
   
   async liste_categaria(): Promise<Categoria[]> {
