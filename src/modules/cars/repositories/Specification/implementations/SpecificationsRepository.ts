@@ -1,47 +1,33 @@
 import { Specification } from "../../../entity/Specification";
-import { ISpecificationDTO, ISpecificationsRepository } from "../ISpecificationsRepository";
+import {
+  ISpecificationDTO,
+  ISpecificationsRepository,
+} from "../ISpecificationsRepository";
+import { getRepository, Repository } from "typeorm";
 
+class SpecificationsRepository implements ISpecificationsRepository {
+  private repository: Repository<Specification>;
 
-class SpecificationsRepository implements ISpecificationsRepository{
+  constructor() {
+    this.repository = getRepository(Specification);
+  }
 
-    private specifications:Specification[];
-    private static INSTANCE:SpecificationsRepository;
+  async create({ name, discricao }: ISpecificationDTO): Promise<void> {
+    const specification = this.repository.create({
+      name,
+      discricao,
+    });
+    await this.repository.save(specification);
+  }
 
-    constructor (){
+  async search_has_Name_Specification(name: string): Promise<Specification> {
+    const specification = await this.repository.findOne({ name });
+    return specification;
+  }
 
-        this.specifications=[];
-    }
-
-    public static getInstane(){
-
-        if(!SpecificationsRepository.INSTANCE){
-            SpecificationsRepository.INSTANCE=new SpecificationsRepository();
-        }
-        return SpecificationsRepository.INSTANCE;
-
-    }
-
-    create({ name, discricao }: ISpecificationDTO): void {
-        const specification=new Specification();
-        Object.assign(specification,{
-            name,
-            discricao,
-            create_At: new Date()
-        })
-        this.specifications.push(specification);
-        
-    }
-    search_has_Name_Specification(name:string):Specification{
-        const specification = this.specifications.find(
-            (specification) => specification.name === name
-          );
-          return specification;
-    }
-
-    liste_specifications(): Specification[] {
-        return this.specifications;
-      }
+  async liste_specifications(): Promise<Specification[]> {
+    return await this.repository.find();
+  }
 }
 
-
-export {SpecificationsRepository}
+export { SpecificationsRepository };

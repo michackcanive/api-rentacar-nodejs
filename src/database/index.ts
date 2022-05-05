@@ -1,5 +1,6 @@
 import {createConnection} from "typeorm";
 import {Categoria} from '../modules/cars/entity/Categoria'
+import { Specification } from "../modules/cars/entity/Specification";
 
 const Connection =  createConnection({
     type: "postgres",
@@ -8,5 +9,5 @@ const Connection =  createConnection({
     username: "docker",
     password: "rentacars",
     database: "rentacars",
-    entities: [Categoria],
+    entities: [Categoria, Specification],
 });

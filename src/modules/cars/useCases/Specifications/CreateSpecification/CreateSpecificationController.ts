@@ -1,19 +1,19 @@
 import { Request, Response } from "express";
 import { ISpecificationsRepository } from "../../../repositories/Specification/ISpecificationsRepository";
 import { CreateSpecificationUseCase } from "./CreateSpecificationUseCase";
+import { container } from "tsyringe";
 
-interface IRequest {
-  name: string;
-  discricao: string;
-}
 class CreateSpecificationController {
-  constructor(private createSpecificationUseCase: CreateSpecificationUseCase) {}
-
-  handle(req: Request, resp: Response) {
+ async handle(req: Request, resp: Response):Promise<Response> {
     const { name, discricao } = req.body;
     
-    this.createSpecificationUseCase.execute({name,discricao})
-    return resp.status(200).send()
+    const createSpecificationUseCase=container.resolve(CreateSpecificationUseCase);
+     await createSpecificationUseCase.execute({name,discricao})
+
+    return resp.status(200).json({
+      err0: false,
+      discricao: "Specification cadastra",
+    });
   }
 }
 export { CreateSpecificationController };
