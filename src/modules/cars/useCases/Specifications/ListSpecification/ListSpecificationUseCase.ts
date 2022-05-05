@@ -1,15 +1,14 @@
 import { Specification } from "../../../entity/Specification";
 import { ISpecificationsRepository } from "../../../repositories/Specification/ISpecificationsRepository";
-
-interface IRequest {
-  name: string;
-  discricao: string;
-}
-
+import { inject,injectable} from 'tsyringe'
+@injectable()
 class ListSpecificationUseCase {
-  constructor(private specificationRepository: ISpecificationsRepository) {}
-  execute():Specification[] {
-    return this.specificationRepository.liste_specifications();
+  constructor(
+    @inject("SpecificationsRepository")
+    private specificationRepository: ISpecificationsRepository) {}
+ 
+ async execute():Promise<Specification[]> {
+    return await this.specificationRepository.liste_specifications();
   }
 }
 
