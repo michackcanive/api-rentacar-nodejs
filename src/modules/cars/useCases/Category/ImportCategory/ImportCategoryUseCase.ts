@@ -1,7 +1,7 @@
-import {parse} from 'csv-parse'
+import { parse } from "csv-parse";
 import fs from "fs";
 import { ICategoryRepository } from "../../../repositories/Category/ICategoryRepository";
-
+import { inject, injectable } from "tsyringe";
 interface IImportCategory {
   name: string;
   discricao: string;
@@ -10,9 +10,12 @@ interface IImportCategory {
 /**
  * Import contact
  */
-
+@injectable()
 class ImportCategoryUseCase {
-  constructor(private categoriasreposity: ICategoryRepository) {}
+  constructor(
+    @inject("CategoriasRepository")
+    private categoriasreposity: ICategoryRepository
+  ) {}
 
   loadCategory(file: Express.Multer.File): Promise<IImportCategory[]> {
 
@@ -21,43 +24,39 @@ class ImportCategoryUseCase {
       const categories: IImportCategory[] = [];
       const parseFile = parse();
       stream.pipe(parseFile);
-      parseFile
-        .on("data", async (line) => {
+
+      parseFile.on("data", async (line) => {
           const [name, discricao] = line;
-       
           categories.push({
-            name:name,
-            discricao:discricao,
+            name: name,
+            discricao: discricao,
           });
-       
         })
         .on("end", () => {
-          fs.promises.unlink(file.path)
+          fs.promises.unlink(file.path);
           resolve(categories);
-        }).on("error",(err)=>{
-          reject(err)
+        })
+        .on("error", (err) => {
+          reject(err);
         });
     });
-
   }
 
-  async execute(file: Express.Multer.File):Promise<void> {
+  async execute(file: Express.Multer.File): Promise<void> {
     const categarias = await this.loadCategory(file);
-    let contador=0;
+    let contador = 0;
 
-    categarias.map( async (categaria)=>{
-      const {name , discricao}=categaria;
-      const is_exest_category=this.categoriasreposity.findByNAme(name)
-      if(!is_exest_category){
-        
+    categarias.map(async (categaria) => {
+
+      const { name, discricao } = categaria;
+      const is_exest_category = await this.categoriasreposity.findByNAme(name);
+      if (!is_exest_category) {
         this.categoriasreposity.create({
           name,
-          discricao
-        })
+          discricao,
+        });
       }
-      
-    })
-
+    });
   }
 }
 
