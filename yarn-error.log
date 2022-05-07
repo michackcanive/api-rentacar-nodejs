@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\AJEC-MICHAK\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add global
+  C:\Program Files\nodejs\node.exe C:\Users\AJEC-MICHAK\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add jsonwebtoken
 
 PATH: 
   C:\Python310\Scripts\;C:\Python310\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\xampp\php;C:\composer;C:\Program Files\Git\cmd;C:\Users\AJEC-MICHAK\AppData\Local\Microsoft\WindowsApps;C:\Users\AJEC-MICHAK\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\AJEC-MICHAK\AppData\Roaming\npm;C:\Users\AJEC-MICHAK\AppData\Roaming\Composer\vendor\bin;C:\Users\AJEC-MICHAK\AppData\Local\Android\Sdk;C:\Program Files\Android\Android Studio\jre\jre;C:\Program Files\Android\Android Studio\jre\bin;C:\Program Files\Android\Android Studio\jre;
@@ -24,7 +24,7 @@ npm manifest:
     "license": "MIT",
     "scripts": {
       "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-      "typeorm":"ts-node-dev ./node_modules/typeorm/cli"
+      "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
     },
     "devDependencies": {
       "@types/express": "^4.17.5",
@@ -47,7 +47,10 @@ npm manifest:
       "csv-parse": "^5.0.4",
       "express": "^4.17.1",
       "multer": "^1.4.4",
+      "pg": "^8.2.1",
+      "reflect-metadata": "^0.1.13",
       "swagger-ui-express": "^4.3.0",
+      "tsyringe": "^4.6.0",
       "typeorm": "^0.2.25",
       "uuidv4": "^6.0.7"
     }
@@ -429,7 +432,7 @@ Lockfile:
   
   buffer-writer@2.0.0:
     version "2.0.0"
-    resolved "https://registry.npmjs.org/buffer-writer/-/buffer-writer-2.0.0.tgz"
+    resolved "https://registry.yarnpkg.com/buffer-writer/-/buffer-writer-2.0.0.tgz#ce7eb81a38f7829db09c873f2fbb792c0c98ec04"
     integrity sha512-a7ZpuTZU1TRtnwyCNW3I5dc0wWNC3VR9S++Ewyk2HHZdrO3CQJqSpd+95Us590V6AL7JqUAH2IwZ/398PmNFgw==
   
   buffer@^6.0.3:
@@ -1721,7 +1724,7 @@ Lockfile:
   
   packet-reader@1.0.0:
     version "1.0.0"
-    resolved "https://registry.npmjs.org/packet-reader/-/packet-reader-1.0.0.tgz"
+    resolved "https://registry.yarnpkg.com/packet-reader/-/packet-reader-1.0.0.tgz#9238e5480dedabacfe1fe3f2771063f164157d74"
     integrity sha512-HAKu/fG3HpHFO0AA8WE8q2g+gBJaZ9MG7fcKk+IJPLTGAD6Psw4443l+9DGRbOIh3/aXr7Phy0TjilYivJo5XQ==
   
   parent-module@^1.0.0:
@@ -1780,27 +1783,27 @@ Lockfile:
   
   pg-connection-string@^2.5.0:
     version "2.5.0"
-    resolved "https://registry.npmjs.org/pg-connection-string/-/pg-connection-string-2.5.0.tgz"
+    resolved "https://registry.yarnpkg.com/pg-connection-string/-/pg-connection-string-2.5.0.tgz#538cadd0f7e603fc09a12590f3b8a452c2c0cf34"
     integrity sha512-r5o/V/ORTA6TmUnyWZR9nCj1klXCO2CEKNRlVuJptZe85QuhFayC7WeMic7ndayT5IRIR0S0xFxFi2ousartlQ==
   
   pg-int8@1.0.1:
     version "1.0.1"
-    resolved "https://registry.npmjs.org/pg-int8/-/pg-int8-1.0.1.tgz"
+    resolved "https://registry.yarnpkg.com/pg-int8/-/pg-int8-1.0.1.tgz#943bd463bf5b71b4170115f80f8efc9a0c0eb78c"
     integrity sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==
   
   pg-pool@^3.5.1:
     version "3.5.1"
-    resolved "https://registry.npmjs.org/pg-pool/-/pg-pool-3.5.1.tgz"
+    resolved "https://registry.yarnpkg.com/pg-pool/-/pg-pool-3.5.1.tgz#f499ce76f9bf5097488b3b83b19861f28e4ed905"
     integrity sha512-6iCR0wVrro6OOHFsyavV+i6KYL4lVNyYAB9RD18w66xSzN+d8b66HiwuP30Gp1SH5O9T82fckkzsRjlrhD0ioQ==
   
   pg-protocol@^1.5.0:
     version "1.5.0"
-    resolved "https://registry.npmjs.org/pg-protocol/-/pg-protocol-1.5.0.tgz"
+    resolved "https://registry.yarnpkg.com/pg-protocol/-/pg-protocol-1.5.0.tgz#b5dd452257314565e2d54ab3c132adc46565a6a0"
     integrity sha512-muRttij7H8TqRNu/DxrAJQITO4Ac7RmX3Klyr/9mJEOBeIpgnF8f9jAfRz5d3XwQZl5qBjF9gLsUtMPJE0vezQ==
   
   pg-types@^2.1.0:
     version "2.2.0"
-    resolved "https://registry.npmjs.org/pg-types/-/pg-types-2.2.0.tgz"
+    resolved "https://registry.yarnpkg.com/pg-types/-/pg-types-2.2.0.tgz#2d0250d636454f7cfa3b6ae0382fdfa8063254a3"
     integrity sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==
     dependencies:
       pg-int8 "1.0.1"
@@ -1811,7 +1814,7 @@ Lockfile:
   
   pg@^8.2.1:
     version "8.7.3"
-    resolved "https://registry.npmjs.org/pg/-/pg-8.7.3.tgz"
+    resolved "https://registry.yarnpkg.com/pg/-/pg-8.7.3.tgz#8a5bdd664ca4fda4db7997ec634c6e5455b27c44"
     integrity sha512-HPmH4GH4H3AOprDJOazoIcpI49XFsHCe8xlrjHkWiapdbHK+HLtbm/GQzXYAZwmPju/kzKhjaSfMACG+8cgJcw==
     dependencies:
       buffer-writer "2.0.0"
@@ -1824,7 +1827,7 @@ Lockfile:
   
   pgpass@1.x:
     version "1.0.5"
-    resolved "https://registry.npmjs.org/pgpass/-/pgpass-1.0.5.tgz"
+    resolved "https://registry.yarnpkg.com/pgpass/-/pgpass-1.0.5.tgz#9b873e4a564bb10fa7a7dbd55312728d422a223d"
     integrity sha512-FdW9r/jQZhSeohs1Z3sI1yxFQNFvMcnmfuj4WBMUTxOrAyLMaTcE1aAMBiTlbMNaXvBCQuVi0R7hd8udDSP7ug==
     dependencies:
       split2 "^4.1.0"
@@ -1836,22 +1839,22 @@ Lockfile:
   
   postgres-array@~2.0.0:
     version "2.0.0"
-    resolved "https://registry.npmjs.org/postgres-array/-/postgres-array-2.0.0.tgz"
+    resolved "https://registry.yarnpkg.com/postgres-array/-/postgres-array-2.0.0.tgz#48f8fce054fbc69671999329b8834b772652d82e"
     integrity sha512-VpZrUqU5A69eQyW2c5CA1jtLecCsN2U/bD6VilrFDWq5+5UIEVO7nazS3TEcHf1zuPYO/sqGvUvW62g86RXZuA==
   
   postgres-bytea@~1.0.0:
     version "1.0.0"
-    resolved "https://registry.npmjs.org/postgres-bytea/-/postgres-bytea-1.0.0.tgz"
+    resolved "https://registry.yarnpkg.com/postgres-bytea/-/postgres-bytea-1.0.0.tgz#027b533c0aa890e26d172d47cf9ccecc521acd35"
     integrity sha1-AntTPAqokOJtFy1Hz5zOzFIazTU=
   
   postgres-date@~1.0.4:
     version "1.0.7"
-    resolved "https://registry.npmjs.org/postgres-date/-/postgres-date-1.0.7.tgz"
+    resolved "https://registry.yarnpkg.com/postgres-date/-/postgres-date-1.0.7.tgz#51bc086006005e5061c591cee727f2531bf641a8"
     integrity sha512-suDmjLVQg78nMK2UZ454hAG+OAW+HQPZ6n++TNDUX+L0+uUlLywnoxJKDou51Zm+zTCjrCl0Nq6J9C5hP9vK/Q==
   
   postgres-interval@^1.1.0:
     version "1.2.0"
-    resolved "https://registry.npmjs.org/postgres-interval/-/postgres-interval-1.2.0.tgz"
+    resolved "https://registry.yarnpkg.com/postgres-interval/-/postgres-interval-1.2.0.tgz#b460c82cb1587507788819a06aa0fffdb3544695"
     integrity sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ==
     dependencies:
       xtend "^4.0.0"
@@ -1948,7 +1951,7 @@ Lockfile:
   
   reflect-metadata@^0.1.13:
     version "0.1.13"
-    resolved "https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.13.tgz"
+    resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
     integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
   
   regexpp@^2.0.1:
@@ -2143,7 +2146,7 @@ Lockfile:
   
   split2@^4.1.0:
     version "4.1.0"
-    resolved "https://registry.npmjs.org/split2/-/split2-4.1.0.tgz"
+    resolved "https://registry.yarnpkg.com/split2/-/split2-4.1.0.tgz#101907a24370f85bb782f08adaabe4e281ecf809"
     integrity sha512-VBiJxFkxiXRlUIeyMQi8s4hgvKCSjtknJv/LVYbrgALPwf5zSKmEwV9Lst25AkvMDnvxODugjdl6KZgwKM1WYQ==
   
   sprintf-js@~1.0.2:
@@ -2373,7 +2376,7 @@ Lockfile:
       strip-bom "^3.0.0"
       strip-json-comments "^2.0.0"
   
-  tslib@^1.8.1, tslib@^1.9.0:
+  tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
     version "1.14.1"
     resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
     integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
@@ -2389,6 +2392,13 @@ Lockfile:
     integrity sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==
     dependencies:
       tslib "^1.8.1"
+  
+  tsyringe@^4.6.0:
+    version "4.6.0"
+    resolved "https://registry.yarnpkg.com/tsyringe/-/tsyringe-4.6.0.tgz#14915d3d7f0db35e1cf7269bdbf7c440713c8d07"
+    integrity sha512-BMQAZamSfEmIQzH8WJeRu1yZGQbPSDuI9g+yEiKZFIcO46GPZuMOC2d0b52cVBdw1d++06JnDSIIZvEnogMdAw==
+    dependencies:
+      tslib "^1.9.3"
   
   type-check@~0.3.2:
     version "0.3.2"

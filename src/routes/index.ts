@@ -8,3 +8,4 @@ router.use('/categoria',categarisRoutes)
 router.use('/specifications',specificationRoutes)
 
 export {router}
+ 
