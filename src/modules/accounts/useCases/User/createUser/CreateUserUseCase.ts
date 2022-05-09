@@ -1,4 +1,7 @@
+import {hash}  from 'bcryptjs';
+import { Hash,verify } from 'crypto';
 import { inject,injectable} from 'tsyringe'
+import { AppError } from '../../../../../errors/AppError';
 import { IUserRepository } from '../../../repository/User/IUserRepository';
 
 
@@ -17,11 +20,13 @@ class CreateUserUseCase  {
   }
  async execute({ name, email, password, numero_licenca }: IRequest):Promise<void> {
 
+ const passwordHash =await hash(password,8);
+
     const user_is_existe = await this.usersreposity.findByemail(email);
     if (user_is_existe) {
-      throw new Error("User Already exists !");
+      throw new AppError("User Already exists !");
     }
-    this.usersreposity.create({ name, email, password, numero_licenca });
+    this.usersreposity.create({ name, email, password:passwordHash, numero_licenca });
   }
 
 }
