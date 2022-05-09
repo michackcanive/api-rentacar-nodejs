@@ -29,9 +29,9 @@ app.use((err: Error, req: Request, resp: Response, next: NextFunction) => {
   });
 });
 
-app.listen(3333, () => {
+app.listen(process.env.HOST, () => {
   console.log(
-    `Hostname: localhost:3333 😀`,
+    `Hostname: localhost: ${process.env.HOST}😀`,
     "\nServidor iniciado proximo nivel 🚀"
   );
 });
