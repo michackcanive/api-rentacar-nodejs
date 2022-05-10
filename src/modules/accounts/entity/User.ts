@@ -22,6 +22,9 @@ export class User {
   numero_licenca: string;
 
   @Column()
+  avatar?: string;
+
+  @Column()
   password: string;
 
   @Column()

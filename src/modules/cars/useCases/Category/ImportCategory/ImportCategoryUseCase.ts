@@ -27,10 +27,12 @@ class ImportCategoryUseCase {
 
       parseFile.on("data", async (line) => {
           const [name, discricao] = line;
+
           categories.push({
             name: name,
             discricao: discricao,
           });
+
         })
         .on("end", () => {
           fs.promises.unlink(file.path);
@@ -45,18 +47,32 @@ class ImportCategoryUseCase {
   async execute(file: Express.Multer.File): Promise<void> {
     const categarias = await this.loadCategory(file);
     let contador = 0;
+    let i=0,con=0,d=0;
+
+  /*   for(i=0;d<10000;d++){ */
 
     categarias.map(async (categaria) => {
 
       const { name, discricao } = categaria;
+     /*  const userNew=new Map()
+      userNew.set(name, { name, discricao } );
+
+      console.log(userNew) */
+    /*   const userNew=new Set()
+      userNew.add(name) */
+
       const is_exest_category = await this.categoriasreposity.findByNAme(name);
+
       if (!is_exest_category) {
         this.categoriasreposity.create({
           name,
           discricao,
         });
       }
+
     });
+/* 
+  } */
   }
 }
 

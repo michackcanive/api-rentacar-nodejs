@@ -31,6 +31,10 @@ class CategoriasRepository implements ICategoryRepository {
     const categorias = await this.repository.find();
     return categorias;
   }
+  async deleteAll(name: string):Promise<void> {
+    const categorias = await this.repository.delete({name});
+   
+  }
 
   async findByNAme(name: string): Promise<Categoria> {
     const categaria = await this.repository.findOne({ name });

@@ -13,7 +13,7 @@ interface Iparament {
   next: NextFunction;
 }
 
-export async function ensureAuthenticated({ req, resp, next }: Iparament) {
+export async function ensureAuthenticated( req , resp, next:NextFunction ) {
   const authHeader = req.headers["authorization"];
 
   if (!authHeader) {
@@ -27,7 +27,12 @@ export async function ensureAuthenticated({ req, resp, next }: Iparament) {
     const userRepository = new UsersRepository();
     const user = await userRepository.findById(user_id);
 
-    if (user) {
+    if (user) { 
+      req.user={
+        id:user.id,
+        name:user.name,
+        email:user.email
+      }
       next();
     } else {
       throw new AppError("User dees not exists ! ", 400);
