@@ -10,7 +10,7 @@ import { ISpecificationsRepository } from "../../modules/cars/repositories/Speci
 container.registerSingleton<ICategoryRepository>(
     "CategoriasRepository",
   CategoriasRepository
-);
+); 
 
 container.registerSingleton<ISpecificationsRepository>(
     "SpecificationsRepository",

@@ -12,7 +12,14 @@ class ListCategoryUseCase  {
     @inject("CategoriasRepository")
     private categoriasreposity: ICategoryRepository) {}
  async  execute(): Promise<Categoria[]>{
-    return  await this.categoriasreposity.liste_categaria();
+  
+
+     const ds=await this.categoriasreposity.liste_categaria();
+     /* ds.map(async (categor)=>{
+      const { name, discricao } = categor;
+     //await this.categoriasreposity.deleteAll(name);
+     }) */
+     return ds
   }
   
 }
