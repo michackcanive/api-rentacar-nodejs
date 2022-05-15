@@ -1,5 +1,5 @@
 import { User } from "../../entity/User";
-import { ICreateUserDTO } from "./dtos/IUserRepositoryDTO";
+import { ICreateUserDTO } from "./dtos/ICreateUserDTO";
 // data transfer object
 interface IUserRepository{
 findByemail(email:string): Promise<User>;
