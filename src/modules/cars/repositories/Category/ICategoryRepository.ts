@@ -1,4 +1,4 @@
-import { Categoria } from "../../entity/Categoria";
+import { Categoria } from "../../entity/Categoria_test_";
 // data transfer object
 interface ICreateCategariaDTO {
     name: string;

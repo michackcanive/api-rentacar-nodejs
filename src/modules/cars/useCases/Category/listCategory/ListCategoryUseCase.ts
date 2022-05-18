@@ -1,4 +1,4 @@
-import { Categoria } from "../../../entity/Categoria";
+import { Categoria } from "../../../entity/Categoria_test_";
 import { ICategoryRepository } from "../../../repositories/Category/ICategoryRepository";
 import { inject, injectable } from "tsyringe";
 

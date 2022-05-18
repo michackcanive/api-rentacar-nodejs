@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import "reflect-metadata";
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 import { container } from "tsyringe";
 class CreateCategoryController {
