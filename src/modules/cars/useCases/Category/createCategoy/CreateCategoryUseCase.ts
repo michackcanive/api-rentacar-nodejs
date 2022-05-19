@@ -1,3 +1,4 @@
+import "reflect-metadata"
 import { inject,injectable} from 'tsyringe'
 import { AppError } from '../../../../../errors/AppError';
 import { ICategoryRepository } from "../../../repositories/Category/ICategoryRepository";

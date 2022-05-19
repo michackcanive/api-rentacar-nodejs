@@ -1,3 +1,4 @@
+import "reflect-metadata"
 import { inject, injectable } from "tsyringe";
 import { IUserRepository } from "../../repository/User/IUserRepository";
 import { deletefile } from "../../../../utils/file";

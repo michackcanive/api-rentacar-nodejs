@@ -1,4 +1,4 @@
-import { Categoria } from "../../../entity/Categoria";
+import { Categoria } from "../../../entity/Categoria_test_";
 import { getRepository, Repository } from "typeorm";
 
 import {

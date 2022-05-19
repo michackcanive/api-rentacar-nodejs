@@ -1,5 +1,6 @@
 import {compare} from "bcryptjs";
 import {sign} from "jsonwebtoken";
+import "reflect-metadata"
 import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../../errors/AppError";
 import { IUserRepository } from "../../repository/User/IUserRepository";
@@ -41,7 +42,7 @@ class AuthenticationUserCase {
       throw new Error("Email or password incorrect");
     }
     //Crianda o token jwt
-    const token = sign({}, process.env.TOKEN_SECRET, {
+    const token = sign({}, '23derfawsqerftg', {
       subject: user_is_existe.id,
       expiresIn: "1d",
     });
