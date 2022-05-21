@@ -1,4 +1,5 @@
-import { SpecificationsRepositoryInMemory } from "../../../repositories/Specification/in-memory/SpecificationsRepositoryInMemory";
+
+import { SpecificationsRepositoryInMemory } from "@modules/cars/repositories/Specification/in-memory/SpecificationsRepositoryInMemory";
 import { CreateSpecificationUseCase } from "./CreateSpecificationUseCase";
 
 let createRepositoryInMemory:SpecificationsRepositoryInMemory;

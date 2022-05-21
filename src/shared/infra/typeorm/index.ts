@@ -1,7 +1,7 @@
 import {createConnection} from "typeorm";
-import { User } from "../modules/accounts/entity/User";
-import {Categoria} from '../modules/cars/entity/Categoria'
-import { Specification } from "../modules/cars/entity/Specification";
+import { User } from "../../../modules/accounts/infra/typeorm/entity/User";
+import {Categoria} from '../../../modules/cars/infra/typeorm/entity/Categoria'
+import { Specification } from "../../../modules/cars/infra/typeorm/entity/Specification";
 
 const Connection =  createConnection({
     type: "postgres",

@@ -1,5 +1,6 @@
-import { User } from "../../entity/User";
+import { User } from "@modules/accounts/infra/typeorm/entity/User";
 import { ICreateUserDTO } from "./dtos/ICreateUserDTO";
+
 // data transfer object
 interface IUserRepository{
 findByemail(email:string): Promise<User>;

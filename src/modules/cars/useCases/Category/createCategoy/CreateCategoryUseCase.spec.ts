@@ -1,5 +1,6 @@
-import { CategoryRepositoryInMemory } from "../../../repositories/Category/in-memory/CategoryRepositoryInMemory";
+import { CategoryRepositoryInMemory } from "@modules/cars/infra/typeorm/repositories/Category/in-memory/CategoryRepositoryInMemory";
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
+
 
 
 let categoryRepositoryInMemory: CategoryRepositoryInMemory;

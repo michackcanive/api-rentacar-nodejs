@@ -1,5 +1,7 @@
-import { Categoria } from "../../../entity/Categoria_test_";
-import { ICategoryRepository } from "../../../repositories/Category/ICategoryRepository";
+
+import { Categoria } from "@modules/cars/infra/typeorm/entity/Categoria";
+import { ICategoryRepository } from "@modules/cars/repositories/Categotery/ICategoryRepository";
+
 import { inject, injectable } from "tsyringe";
 
 interface IRequest {

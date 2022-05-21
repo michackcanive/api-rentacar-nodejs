@@ -1,9 +1,8 @@
-import { Categoria } from "../../entity/Categoria_test_";
+import { Categoria } from "@modules/cars/infra/typeorm/entity/Categoria";
+import { ICreateCategariaDTO } from "./dtos/ICreateCategoryDTO";
+
 // data transfer object
-interface ICreateCategariaDTO {
-    name: string;
-    discricao: string;
-  }
+
 interface ICategoryRepository{
 findByNAme(name:string): Promise<Categoria>;
 create({name,discricao}:ICreateCategariaDTO): Promise<void>;

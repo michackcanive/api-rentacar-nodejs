@@ -1,10 +1,11 @@
 
-import { Specification_teste_ } from "../../../entity/Specification_test_";
-import { ISpecificationDTO, ISpecificationsRepository } from "../ISpecificationsRepository";
+
+import { Specification_teste_ } from "@modules/cars/infra/typeorm/entity/Specification_test_";
+import { ICreateSpecificationDTO, ISpecificationsRepository } from "../ISpecificationsRepository";
 
 class SpecificationsRepositoryInMemory  implements ISpecificationsRepository{
     Specificatoes:Specification_teste_[]=[];
-  async  create({ name, discricao }: ISpecificationDTO): Promise<void> {
+  async  create({ name, discricao }: ICreateSpecificationDTO): Promise<void> {
         const specificao=new Specification_teste_();
         Object.assign(specificao,{
             name,

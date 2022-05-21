@@ -1,7 +1,9 @@
+import { AppError } from "@errors/AppError";
+import { ICategoryRepository } from "@modules/cars/repositories/Categotery/ICategoryRepository";
+
 import "reflect-metadata"
-import { inject,injectable} from 'tsyringe'
-import { AppError } from '../../../../../errors/AppError';
-import { ICategoryRepository } from "../../../repositories/Category/ICategoryRepository";
+import { inject, injectable } from "tsyringe";
+
 
 
 interface IRequest {

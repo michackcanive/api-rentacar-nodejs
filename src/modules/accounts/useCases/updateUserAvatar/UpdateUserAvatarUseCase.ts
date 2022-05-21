@@ -1,7 +1,8 @@
+import { IUserRepository } from "@modules/accounts/repository/User/IUserRepository";
 import "reflect-metadata"
 import { inject, injectable } from "tsyringe";
-import { IUserRepository } from "../../repository/User/IUserRepository";
-import { deletefile } from "../../../../utils/file";
+import { deletefile } from "utils/file";
+
 interface IRequest {
   id_user: string;
   file_avatar: string;
