@@ -1,6 +1,6 @@
 
 
-import { Specification_teste_ } from "@modules/cars/infra/typeorm/entity/Specification_test_";
+import { Specification_teste_ } from "../../../infra/typeorm/entity/Specification_test_";
 import { ICreateSpecificationDTO, ISpecificationsRepository } from "../ISpecificationsRepository";
 
 class SpecificationsRepositoryInMemory  implements ISpecificationsRepository{
@@ -12,7 +12,7 @@ class SpecificationsRepositoryInMemory  implements ISpecificationsRepository{
             discricao
         })
         this.Specificatoes.push(specificao)
-      
+
     }
    async search_has_Name_Specification(name: string): Promise<Specification_teste_> {
        const spesficao=this.Specificatoes.find((spesficao)=>spesficao.name===name)

@@ -1,4 +1,5 @@
-import { User } from "@modules/accounts/infra/typeorm/entity/User";
+
+import { User } from "../../infra/typeorm/entity/User";
 import { ICreateUserDTO } from "./dtos/ICreateUserDTO";
 
 // data transfer object

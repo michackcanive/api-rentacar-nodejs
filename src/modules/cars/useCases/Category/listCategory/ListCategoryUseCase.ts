@@ -1,8 +1,9 @@
 
-import { Categoria } from "@modules/cars/infra/typeorm/entity/Categoria";
-import { ICategoryRepository } from "@modules/cars/repositories/Categotery/ICategoryRepository";
+
 
 import { inject, injectable } from "tsyringe";
+import { Categoria } from "../../../infra/typeorm/entity/Categoria";
+import { ICategoryRepository } from "../../../repositories/Categotery/ICategoryRepository";
 
 interface IRequest {
   name: string;
@@ -14,7 +15,7 @@ class ListCategoryUseCase  {
     @inject("CategoriasRepository")
     private categoriasreposity: ICategoryRepository) {}
  async  execute(): Promise<Categoria[]>{
-  
+
 
      const ds=await this.categoriasreposity.liste_categaria();
      /* ds.map(async (categor)=>{
@@ -23,6 +24,6 @@ class ListCategoryUseCase  {
      }) */
      return ds
   }
-  
+
 }
 export { ListCategoryUseCase };

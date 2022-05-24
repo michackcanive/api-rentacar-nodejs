@@ -1,8 +1,9 @@
-import { AppError } from '@errors/AppError';
-import { IUserRepository } from '@modules/accounts/repository/User/IUserRepository';
+
 import {hash}  from 'bcryptjs';
 import { Hash,verify } from 'crypto';
 import { inject,injectable} from 'tsyringe'
+import { AppError } from '../../../../../errors/AppError';
+import { IUserRepository } from '../../../repository/User/IUserRepository';
 
 
 

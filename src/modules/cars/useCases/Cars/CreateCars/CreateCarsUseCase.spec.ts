@@ -1,23 +1,23 @@
 
 
 import { CategoryRepositoryInMemory } from "../../../repositories/Categotery/in-memory/CategoryRepositoryInMemory";
-import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
+import { CreateCarsUseCase } from "./CreateCarsUseCase";
 
 
 
 let categoryRepositoryInMemory: CategoryRepositoryInMemory;
-let createCategoryUseCase: CreateCategoryUseCase;
+let createCategoryUseCase: CreateCarsUseCase;
 
 describe("Criar Categoria",  () => {
   beforeEach(() => {
     categoryRepositoryInMemory = new CategoryRepositoryInMemory();
-    createCategoryUseCase = new CreateCategoryUseCase(
+    createCategoryUseCase = new CreateCarsUseCase(
       categoryRepositoryInMemory
     );
   });
-  it("Deve ser capaz de criar  um nove Category", async () => {
+  it("Deve ser capaz de criar  um novo cars", async () => {
     const categoria = {
-      name: "Categoria tes",
+      name: "cars tes",
       discricao: "ditecricao teste",
     };
 

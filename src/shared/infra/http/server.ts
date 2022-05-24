@@ -5,10 +5,11 @@ import { routers } from "./routes";
 import swaggerUri from "swagger-ui-express";
 import swaggerFile from "../../../swagger.json";
 
-import "@shared/container";
+import "./../../container";
 
 import dotenv from "dotenv";
-import { AppError } from "@errors/AppError";
+import { AppError } from "../../../errors/AppError";
+
 dotenv.config();
 
 const app = express();

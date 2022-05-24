@@ -1,9 +1,11 @@
 
-import { ICategoryRepository } from "@modules/cars/repositories/Categotery/ICategoryRepository";
+
 import { parse } from "csv-parse";
 import fs from "fs";
 
+
 import { inject, injectable } from "tsyringe";
+import { ICategoryRepository } from "../../../repositories/Categotery/ICategoryRepository";
 interface IImportCategory {
   name: string;
   discricao: string;

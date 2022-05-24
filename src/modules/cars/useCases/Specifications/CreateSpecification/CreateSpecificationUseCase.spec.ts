@@ -1,5 +1,5 @@
 
-import { SpecificationsRepositoryInMemory } from "@modules/cars/repositories/Specification/in-memory/SpecificationsRepositoryInMemory";
+import { SpecificationsRepositoryInMemory } from "../../../repositories/Specification/in-memory/SpecificationsRepositoryInMemory";
 import { CreateSpecificationUseCase } from "./CreateSpecificationUseCase";
 
 let createRepositoryInMemory:SpecificationsRepositoryInMemory;
@@ -11,7 +11,7 @@ describe("Criar Specificacao",  () => {
     createRepositoryInMemory=new SpecificationsRepositoryInMemory()
     createSpecificationUseCase=new CreateSpecificationUseCase(createRepositoryInMemory)
   })
-  
+
   it('Espero criar uma especificao',async ()=>{
     const specificao={
       name:'Especi 1',

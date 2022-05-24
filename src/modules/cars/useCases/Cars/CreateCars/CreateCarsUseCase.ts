@@ -14,7 +14,7 @@ interface IRequest {
 }
 
 @injectable()
-class CreateCategoryUseCase  {
+class CreateCarsUseCase  {
   constructor(
     @inject("CategoriasRepository")
     private categoriasreposity: ICategoryRepository) {
@@ -23,11 +23,11 @@ class CreateCategoryUseCase  {
 
     const categoria_is_existe = await this.categoriasreposity.findByNAme(name);
     if (categoria_is_existe) {
-      throw new AppError("Category Already exists !");
+      throw new AppError("Cars Already exists !");
     }
     this.categoriasreposity.create({ name, discricao });
   }
 
 }
 
-export { CreateCategoryUseCase };
+export { CreateCarsUseCase };

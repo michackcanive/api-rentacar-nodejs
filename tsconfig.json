@@ -1,25 +1,25 @@
 {
   "compilerOptions": {
 
-    
-    "target": "es2016",                                  
-    "experimentalDecorators": true,                  
-    "emitDecoratorMetadata": true,                    
-    
-    "module": "commonjs",                               
-    
-     "baseUrl": "./src",                                  
+
+    "target": "es2016",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    "module": "commonjs",
+
+    /*  "baseUrl": ".",
        "paths": {
          "@config/*":["config/*"],
          "@modules/*":["modules/*"],
          "@shared/*":["shared/*"],
          "@errors/*":["errors/*"]
-       },                                   
-    "resolveJsonModule": true,                       
-    "esModuleInterop": true,                             
-    "forceConsistentCasingInFileNames": true,            
+       }, */
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
 
-    "strict": false,                                      
-    "skipLibCheck": true                                 
+    "strict": false,
+    "skipLibCheck": true
   }
 }

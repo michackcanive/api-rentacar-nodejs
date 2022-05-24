@@ -3,7 +3,7 @@
 
 
 import { Categoria_test_ } from "../../../infra/typeorm/entity/Categoria_test_";
-import { ICategoryRepository, ICreateCategariaDTO } from "../ICategoryRepository";
+import { ICategoryRepository, ICreateCategariaDTO } from "../ICarsRepository";
 
 
 class CategoryRepositoryInMemory implements ICategoryRepository {

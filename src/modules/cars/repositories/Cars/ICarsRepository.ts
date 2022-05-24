@@ -1,6 +1,6 @@
 
 import { Categoria } from "../../infra/typeorm/entity/Categoria";
-import { ICreateCategariaDTO } from "./dtos/ICreateCategoryDTO";
+import { ICreateCategariaDTO } from "./dtos/ICreateCarsDTO";
 
 // data transfer object
 
