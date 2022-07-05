@@ -1,6 +1,6 @@
 
 
-import { Specification_teste_ } from "../../../infra/typeorm/entity/Specification_test_";
+import { Specification_teste_ } from "../../../infra/typeorm/entity_test/Specification_test_";
 import { ICreateSpecificationDTO, ISpecificationsRepository } from "../ISpecificationsRepository";
 
 class SpecificationsRepositoryInMemory  implements ISpecificationsRepository{

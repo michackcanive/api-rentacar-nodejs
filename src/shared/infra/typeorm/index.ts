@@ -1,5 +1,6 @@
 import {createConnection} from "typeorm";
 import { User } from "../../../modules/accounts/infra/typeorm/entity/User";
+import { Cars } from "../../../modules/cars/infra/typeorm/entity/Cars";
 import {Categoria} from '../../../modules/cars/infra/typeorm/entity/Categoria'
 import { Specification } from "../../../modules/cars/infra/typeorm/entity/Specification";
 
@@ -10,5 +11,5 @@ const Connection =  createConnection({
     username: "docker",
     password: "rentacars",
     database: "rentacars",
-    entities: [Categoria, Specification,User],
+    entities: [Categoria, Specification,User,Cars],
 });

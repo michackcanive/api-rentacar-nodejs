@@ -1,25 +1,27 @@
 interface ICreateCarsDTO {
-
 	id?: string;
- 	//@Column()
-	 name: string;
+	//@Column()
+	name: string;
 
-	 //@Column()
-	 discricao: string;
+	//@Column()
+	discricao: string;
 
-	 //@Column()
-	 numero_licenca: string;
+	//@Column()
+	numero_licenca: number;
 
-	 //@Column()
-	 daily_rate: string;
+	//@Column()
+	daily_rate: string;
 
-	 //@Column()
-	 available: string;
+	//@Column()
+	available?: boolean;
 
-	 //@Column()
-	 lecense_placa: string;
+	//@Column()
+	lecense_placa: string;
 
-	 //@Column()
-	 id_category: string;
+	brand: string;
+
+	fine_amount: number;
+	//@Column()
+	id_category: string;
 }
-export {ICreateCarsDTO}
+export { ICreateCarsDTO };

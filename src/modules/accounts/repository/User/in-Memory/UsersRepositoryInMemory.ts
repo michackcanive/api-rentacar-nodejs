@@ -1,5 +1,5 @@
 
-import { User_test_ } from "../../../infra/typeorm/entity/User_test_";
+import { User_test_ } from "../../../infra/typeorm/entity_test/User_test_";
 import { ICreateUserDTO, IUserRepository } from "../IUserRepository";
 
 

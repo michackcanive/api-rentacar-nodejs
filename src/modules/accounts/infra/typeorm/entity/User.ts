@@ -15,6 +15,9 @@ export class User {
   @Column()
   name: string;
 
+	@Column()
+  brand: string;
+
   @Column()
   email: string;
 

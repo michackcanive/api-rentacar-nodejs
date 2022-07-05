@@ -10,10 +10,10 @@ class CreateCategoryController {
     await createCategoryUseCase.execute({ name, discricao });
 
     return resp.status(200).json({
-      err0: false,
+      erro: false,
       discricao: "Categoria cadastra",
     });
-    
+
   }
 }
 export { CreateCategoryController };

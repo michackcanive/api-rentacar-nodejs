@@ -15,6 +15,8 @@ export class User_test_ {
   //@Column()
   name: string;
 
+	brand: string;
+
   //@Column()
   email: string;
 
@@ -33,3 +35,4 @@ export class User_test_ {
   //@CreateDateColumn()
   create_at: Date;
 }
+

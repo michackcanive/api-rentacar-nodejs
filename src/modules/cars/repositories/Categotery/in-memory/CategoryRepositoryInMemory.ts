@@ -2,7 +2,7 @@
 
 
 
-import { Categoria_test_ } from "../../../infra/typeorm/entity/Categoria_test_";
+import { Categoria_test_ } from "../../../infra/typeorm/entity_test/Categoria_test_";
 import { ICategoryRepository, ICreateCategariaDTO } from "../ICategoryRepository";
 
 

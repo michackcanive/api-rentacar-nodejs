@@ -1,4 +1,4 @@
-
+import "reflect-metadata"
 import { AppError } from "../../../../errors/AppError";
 import { UsersRepositoryInMemory } from "../../repository/User/in-Memory/UsersRepositoryInMemory";
 import { ICreateUserDTO } from "../../repository/User/IUserRepository";

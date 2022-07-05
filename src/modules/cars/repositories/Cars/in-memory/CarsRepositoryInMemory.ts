@@ -1,39 +1,44 @@
+import { Cars } from "../../../infra/typeorm/entity/Cars";
+import { Cars_test_ } from "../../../infra/typeorm/entity_test/Cars_test_";
 
+import { ICarsRepository, ICreateCarsDTO } from "../ICarsRepository";
 
+class CarsRepositoryInMemory implements ICarsRepository {
+	Cars: Cars_test_[] = [];
 
+	async findBylecense_placa(lecense_placa: string): Promise<Cars_test_> {
+		const cars = this.Cars.find((Cars) => Cars.lecense_placa === lecense_placa);
+		return cars;
+	}
 
-import { Categoria_test_ } from "../../../infra/typeorm/entity/Categoria_test_";
-import { ICategoryRepository, ICreateCategariaDTO } from "../ICarsRepository";
+	async create({
+		brand,daily_rate,discricao,fine_amount,id_category,lecense_placa,name,numero_licenca
+	 }: ICreateCarsDTO): Promise<Cars_test_> {
+		const cars = new Cars_test_();
 
+		Object.assign(cars, {
+			name,
+			discricao,
+			numero_licenca,
+			daily_rate,
+			lecense_placa,
+			brand,
+			fine_amount,
+			id_category
+		});
 
-class CategoryRepositoryInMemory implements ICategoryRepository {
+		this.Cars.push(cars);
 
-     Categorias:Categoria_test_[]=[];
+		return cars;
 
-     async findByNAme(name: string): Promise<Categoria_test_> {
-        const categaria =  this.Categorias.find((Categoria)=>Categoria.name===name);
-        return categaria;
-      }
-  async  create({ name, discricao }: ICreateCategariaDTO): Promise<void> {
-       const categoria=new Categoria_test_();
-       Object.assign(categoria,{
-        name,
-        discricao
-       })
-
-       this.Categorias.push(categoria)
-
-
-    }
-   async liste_categaria(): Promise<Categoria_test_[]> {
-      const list=this.Categorias
-      return list;
-    }
-    deleteAll(name: string): Promise<void> {
-
-        throw new Error("Method not implemented.");
-    }
-
+	}
+	async liste_cars(): Promise<Cars_test_[]> {
+		const list = this.Cars;
+		return list;
+	}
+	deleteAll(name: string): Promise<void> {
+		throw new Error("Method not implemented.");
+	}
 }
 
-export{CategoryRepositoryInMemory}
+export { CarsRepositoryInMemory };

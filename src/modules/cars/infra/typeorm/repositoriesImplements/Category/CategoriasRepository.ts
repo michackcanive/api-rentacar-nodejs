@@ -1,14 +1,13 @@
 
 import { getRepository, Repository } from "typeorm";
-import { ICategoryRepository } from "../../../../repositories/Cars/ICarsRepository";
-import { ICreateCategariaDTO } from "../../../../repositories/Categotery/ICategoryRepository";
-import { Categoria_test_ } from "../../entity/Categoria_test_";
+import { ICategoryRepository, ICreateCategariaDTO } from "../../../../repositories/Categotery/ICategoryRepository";
+import { Categoria } from "../../entity/Categoria";
 
 class CategoriasRepository implements ICategoryRepository {
-  private repository: Repository<Categoria_test_>;
+  private repository: Repository<Categoria>;
 
   constructor() {
-    this.repository = getRepository(Categoria_test_);
+    this.repository = getRepository(Categoria);
   }
 
   async create({ name, discricao }: ICreateCategariaDTO): Promise<void> {
@@ -20,7 +19,7 @@ class CategoriasRepository implements ICategoryRepository {
     await this.repository.save(categaria);
   }
 
-  async liste_categaria(): Promise<Categoria_test_[]> {
+  async liste_categaria(): Promise<Categoria[]> {
     const categorias = await this.repository.find();
     return categorias;
   }
@@ -28,7 +27,7 @@ class CategoriasRepository implements ICategoryRepository {
     const categorias = await this.repository.delete({ name });
   }
 
-  async findByNAme(name: string): Promise<Categoria_test_> {
+  async findByNAme(name: string): Promise<Categoria> {
     const categaria = await this.repository.findOne({ name });
     return categaria;
   }
